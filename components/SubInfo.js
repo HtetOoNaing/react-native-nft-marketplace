@@ -26,6 +26,21 @@ export const NFTTitle = ({ title, subTitle, titleSize, subTitleSize }) => {
   );
 };
 
+export const EthPrice = ({ price }) => {
+  return (
+    <View style={{ flexDirection: "row", alignItems: "center" }}>
+      <Image
+        source={assets.eth}
+        resizeMode="contain"
+        style={{ width: 20, height: 20, marginRight: 2 }}
+      />
+      <Text style={{ fontSize: SIZES.font, color: COLORS.primary }}>
+        {price}
+      </Text>
+    </View>
+  );
+};
+
 export const ImageCmp = ({ imgUrl, index }) => {
   return (
     <Image
