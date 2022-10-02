@@ -1,5 +1,4 @@
-import { View, Text, Image } from "react-native";
-import React from "react";
+import { View, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { assets, COLORS, SHADOWS, SIZES } from "../constants";
 import { CircleButton, RectButton } from "./Button";
