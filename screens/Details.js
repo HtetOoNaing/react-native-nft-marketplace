@@ -15,7 +15,7 @@ import {
   RectButton,
   SubInfo,
 } from "../components";
-import { assets, SHADOWS, SIZES } from "../constants";
+import { assets, COLORS, FONTS, SHADOWS, SIZES } from "../constants";
 
 const DetailsHeader = ({ data, navigation }) => {
   return (
@@ -75,6 +75,17 @@ const Details = ({ route, navigation }) => {
             <SubInfo />
             <View style={{ padding: SIZES.font }}>
               <DetailsDesc data={data} />
+              {data.bids.length > 0 && (
+                <Text
+                  style={{
+                    fontSize: SIZES.font,
+                    fontFamily: FONTS.semiBold,
+                    color: COLORS.secondary,
+                  }}
+                >
+                  Current Bids
+                </Text>
+              )}
             </View>
           </Fragment>
         )}
