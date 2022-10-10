@@ -12,6 +12,7 @@ import {
   DetailsBid,
   FocusedStatusBar,
   RectButton,
+  SubInfo,
 } from "../components";
 import { assets, SHADOWS, SIZES } from "../constants";
 
@@ -70,6 +71,7 @@ const Details = ({ route, navigation }) => {
         ListHeaderComponent={() => (
           <Fragment>
             <DetailsHeader data={data} navigation={navigation} />
+            <SubInfo />
           </Fragment>
         )}
       />
