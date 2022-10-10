@@ -1,9 +1,11 @@
 import { View, Text } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { EthPrice, NFTTitle } from "./SubInfo";
 import { COLORS, FONTS, SIZES } from "../constants";
 
 const DetailsDesc = ({ data }) => {
+  const [text, setText] = useState(data.description.slice(0, 100));
+  const [readMore, setReadMore] = useState(false);
   return (
     <>
       <View
@@ -41,7 +43,25 @@ const DetailsDesc = ({ data }) => {
               lineHeight: SIZES.large,
             }}
           >
-            {data.description}
+            {text} {!readMore && "..."}
+            <Text
+              style={{
+                fontSize: SIZES.small,
+                fontFamily: FONTS.semiBold,
+                color: COLORS.secondary,
+              }}
+              onPress={() => {
+                if (readMore) {
+                  setText(data.description.slice(0, 100));
+                  setReadMore(false);
+                } else {
+                  setText(data.description);
+                  setReadMore(true);
+                }
+              }}
+            >
+              {readMore ? " Show Less" : " Read More"}
+            </Text>
           </Text>
         </View>
       </View>
