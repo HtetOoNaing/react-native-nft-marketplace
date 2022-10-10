@@ -10,6 +10,7 @@ import {
 import {
   CircleButton,
   DetailsBid,
+  DetailsDesc,
   FocusedStatusBar,
   RectButton,
   SubInfo,
@@ -72,6 +73,9 @@ const Details = ({ route, navigation }) => {
           <Fragment>
             <DetailsHeader data={data} navigation={navigation} />
             <SubInfo />
+            <View style={{ padding: SIZES.font }}>
+              <DetailsDesc data={data} />
+            </View>
           </Fragment>
         )}
       />
